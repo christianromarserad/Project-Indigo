@@ -50,7 +50,7 @@ function App() {
             <Grid container alignItems="center">
               <Search />
               <Grid item xs={true}>
-                <Input disableUnderline fullWidth />
+                <Input disableUnderline fullWidth placeholder="Search" />
               </Grid>
             </Grid>
           </Grid>
