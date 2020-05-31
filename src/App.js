@@ -46,12 +46,12 @@ function App() {
       <AppBar className={appBar} elevation={3}>
         <Toolbar>
           <Grid item xs={4}></Grid>
-          <Grid xs={4} item className={searchBar} container alignItems="center">
-            <Grid item>
+          <Grid xs={4} item className={searchBar} container>
+            <Grid container alignItems="center">
               <Search />
-            </Grid>
-            <Grid item xs={true}>
-              <Input disableUnderline fullWidth />
+              <Grid item xs={true}>
+                <Input disableUnderline fullWidth />
+              </Grid>
             </Grid>
           </Grid>
           <Grid
