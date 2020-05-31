@@ -7,6 +7,7 @@ import {
   ListItem,
   ListItemIcon,
   ListItemText,
+  Drawer,
 } from "@material-ui/core";
 import {
   Dashboard,
@@ -25,6 +26,7 @@ const useStyles = makeStyles((theme) => ({
     color: "black",
     height: "100vh",
     width: "200px",
+    zIndex: theme.zIndex.snackbar,
   },
 }));
 
@@ -69,7 +71,7 @@ const listItems = [
 function SideBar() {
   const { paper } = useStyles();
   return (
-    <Paper className={paper}>
+    <Paper className={paper} open={true}>
       <Toolbar />
       <List component="nav" aria-labelledby="nested-list-subheader">
         {listItems.map(({ label, icon, to }) => (

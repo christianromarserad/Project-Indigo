@@ -6,7 +6,8 @@ import Leads from "./Leads";
 
 const useStyles = makeStyles((theme) => ({
   mainContent: {
-    padding: "2rem",
+    padding: "1rem",
+    margin: 0,
   },
 }));
 

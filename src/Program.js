@@ -9,6 +9,7 @@ import {
   ListItemText,
   ListItemAvatar,
   ListItemSecondaryAction,
+  Paper,
 } from "@material-ui/core";
 import {
   Loop,
@@ -19,14 +20,17 @@ import {
 import aere from "./Aare.svg";
 
 const useStyles = makeStyles((theme) => ({
-  mainContent: {
-    padding: "2rem",
+  mainContainer: {
+    padding: "1rem 1rem 1rem 0",
   },
   myProgram: {
     height: "300px",
   },
   programImage: {
     objectFit: "cover",
+  },
+  paper: {
+    padding: "1rem",
   },
 }));
 
@@ -54,28 +58,30 @@ const listItems = [
 ];
 
 function Program() {
-  const { mainContent, myProgram, programImage } = useStyles();
+  const { mainContainer, myProgram, programImage, paper } = useStyles();
   return (
-    <Grid item container>
-      <Grid item xs={12}>
-        <Typography variant="h5">Little Hearts Program</Typography>
-      </Grid>
-      <Grid className={myProgram} item xs={12}>
-        <img className={programImage} width="100%" height="20%" src={aere} />
-        <Grid item container xs={12}>
-          <List style={{ width: "100%" }}>
-            {listItems.map(({ label, icon, value }) => (
-              <ListItem>
-                <ListItemAvatar>
-                  <Avatar>{icon}</Avatar>
-                </ListItemAvatar>
-                <ListItemText primary={label} />
-                <ListItemSecondaryAction>
-                  <Typography>{value}</Typography>
-                </ListItemSecondaryAction>
-              </ListItem>
-            ))}
-          </List>
+    <Grid item container className={mainContainer}>
+      <Grid className={paper} item container component={Paper} elevation={2}>
+        <Grid item xs={12}>
+          <Typography variant="h5">Little Hearts Program</Typography>
+        </Grid>
+        <Grid className={myProgram} item xs={12}>
+          <img className={programImage} width="100%" height="20%" src={aere} />
+          <Grid item container xs={12}>
+            <List style={{ width: "100%" }}>
+              {listItems.map(({ label, icon, value }) => (
+                <ListItem>
+                  <ListItemAvatar>
+                    <Avatar>{icon}</Avatar>
+                  </ListItemAvatar>
+                  <ListItemText primary={label} />
+                  <ListItemSecondaryAction>
+                    <Typography>{value}</Typography>
+                  </ListItemSecondaryAction>
+                </ListItem>
+              ))}
+            </List>
+          </Grid>
         </Grid>
       </Grid>
     </Grid>

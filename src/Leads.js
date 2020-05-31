@@ -60,7 +60,7 @@ const leads = [
 function Leads() {
   const { leadsContainer, subtitle } = useStyles();
   return (
-    <Grid className={leadsContainer} container item xs={12} spacing={2}>
+    <Grid container item xs={12} spacing={2}>
       {leads.map(({ title, value, earn, time, icon }) => (
         <Grid item xs={true}>
           <Card elevation={2}>
