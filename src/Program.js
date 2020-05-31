@@ -1,18 +1,11 @@
 import React from "react";
-import avatarImage from "./avatar.png";
 import {
   makeStyles,
-  AppBar,
   Avatar,
   Grid,
-  IconButton,
-  Input,
-  Toolbar,
   Typography,
-  Paper,
   List,
   ListItem,
-  ListItemIcon,
   ListItemText,
   ListItemAvatar,
   ListItemSecondaryAction,
@@ -22,11 +15,7 @@ import {
   List as ListIcon,
   BatteryChargingFull,
   History,
-  Work,
 } from "@material-ui/icons";
-import { ResponsiveLine } from "@nivo/line";
-import earningsData from "./earningsData";
-import Earnings from "./Earnings";
 import aere from "./Aare.svg";
 
 const useStyles = makeStyles((theme) => ({

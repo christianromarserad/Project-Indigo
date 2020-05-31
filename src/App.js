@@ -9,7 +9,6 @@ import {
   Input,
   Toolbar,
   Typography,
-  Paper,
 } from "@material-ui/core";
 import { MailOutline, NotificationsNone, Search } from "@material-ui/icons";
 import SideBar from "./SideBar";

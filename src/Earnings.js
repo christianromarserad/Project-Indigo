@@ -1,5 +1,4 @@
 import React from "react";
-import avatarImage from "./avatar.png";
 import { makeStyles, Grid, Typography } from "@material-ui/core";
 
 import { ResponsiveLine } from "@nivo/line";
