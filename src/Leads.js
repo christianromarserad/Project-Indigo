@@ -59,7 +59,7 @@ function Leads() {
   return (
     <Grid container item xs={12} spacing={2}>
       {leads.map(({ title, value, earn, time, icon }) => (
-        <Grid item xs={true}>
+        <Grid item xs={true} key={title}>
           <Card elevation={2}>
             <CardHeader
               avatar={<Avatar aria-label="recipe">{icon}</Avatar>}
@@ -85,7 +85,7 @@ function Leads() {
                     borderLeft: "1px solid #DCDCDC",
                   }}
                 >
-                  <Typography variant="body">{earn}+</Typography>
+                  <Typography>{earn}+</Typography>
                   <Typography className={subtitle} variant="subtitle2">
                     {time}
                   </Typography>

@@ -1,5 +1,6 @@
 const earningsData = [
   {
+    id: "Earnings",
     color: "hsl(121, 70%, 50%)",
     data: [
       {

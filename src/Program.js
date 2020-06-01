@@ -70,7 +70,7 @@ function Program() {
           <Grid item container xs={12}>
             <List style={{ width: "100%" }}>
               {listItems.map(({ label, icon, value }) => (
-                <ListItem>
+                <ListItem key={label}>
                   <ListItemAvatar>
                     <Avatar>{icon}</Avatar>
                   </ListItemAvatar>

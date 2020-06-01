@@ -76,7 +76,13 @@ function SideBar({ open, onClose }) {
       <Drawer variant="temporary" open={open} onClose={onClose}>
         <List component="nav" aria-labelledby="nested-list-subheader">
           {listItems.map(({ label, icon, to }) => (
-            <ListItem button component={Link} to={to} onClick={onClose}>
+            <ListItem
+              button
+              component={Link}
+              to={to}
+              onClick={onClose}
+              key={label}
+            >
               <ListItemIcon>{icon}</ListItemIcon>
               <ListItemText primary={label} />
             </ListItem>
@@ -88,7 +94,7 @@ function SideBar({ open, onClose }) {
           <Toolbar />
           <List component="nav" aria-labelledby="nested-list-subheader">
             {listItems.map(({ label, icon, to }) => (
-              <ListItem button component={Link} to={to}>
+              <ListItem button component={Link} to={to} key={label}>
                 <ListItemIcon>{icon}</ListItemIcon>
                 <ListItemText primary={label} />
               </ListItem>

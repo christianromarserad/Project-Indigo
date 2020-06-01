@@ -52,7 +52,9 @@ function App() {
     <>
       <AppBar className={appBar} elevation={3}>
         <Toolbar>
-          <Grid item sm={0} md={4}></Grid>
+          <Hidden smDown>
+            <Grid item md={4}></Grid>
+          </Hidden>
           <Hidden smDown>
             <Grid xs={4} item className={searchBar} container>
               <Grid container alignItems="center">
@@ -97,7 +99,7 @@ function App() {
         <Grid item>
           <SideBar open={isDrawerOpen} onClose={() => setIsDrawerOpen(false)} />
         </Grid>
-        <Grid xs={true}>
+        <Grid item xs={true}>
           <Content />
         </Grid>
       </Grid>

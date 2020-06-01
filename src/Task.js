@@ -106,7 +106,7 @@ const Task = () => {
     <Grid container className={mainContainer}>
       <DragDropContext onDragEnd={onDragEnd}>
         <Grid container className={buttonContainer} alignItems="center">
-          <Grid xs={true}>
+          <Grid item xs={true}>
             <Typography variant="h5">Tasks</Typography>
           </Grid>
           <Button className={button}>Create Tasks</Button>
