@@ -8,6 +8,7 @@ import {
   ListItemIcon,
   ListItemText,
   Drawer,
+  Hidden,
 } from "@material-ui/core";
 import {
   Dashboard,
@@ -68,20 +69,34 @@ const listItems = [
   },
 ];
 
-function SideBar() {
+function SideBar({ open, onClose }) {
   const { paper } = useStyles();
   return (
-    <Paper className={paper} open={true}>
-      <Toolbar />
-      <List component="nav" aria-labelledby="nested-list-subheader">
-        {listItems.map(({ label, icon, to }) => (
-          <ListItem button component={Link} to={to}>
-            <ListItemIcon>{icon}</ListItemIcon>
-            <ListItemText primary={label} />
-          </ListItem>
-        ))}
-      </List>
-    </Paper>
+    <>
+      <Drawer variant="temporary" open={open} onClose={onClose}>
+        <List component="nav" aria-labelledby="nested-list-subheader">
+          {listItems.map(({ label, icon, to }) => (
+            <ListItem button component={Link} to={to} onClick={onClose}>
+              <ListItemIcon>{icon}</ListItemIcon>
+              <ListItemText primary={label} />
+            </ListItem>
+          ))}
+        </List>
+      </Drawer>
+      <Hidden smDown>
+        <Paper className={paper} open={true}>
+          <Toolbar />
+          <List component="nav" aria-labelledby="nested-list-subheader">
+            {listItems.map(({ label, icon, to }) => (
+              <ListItem button component={Link} to={to}>
+                <ListItemIcon>{icon}</ListItemIcon>
+                <ListItemText primary={label} />
+              </ListItem>
+            ))}
+          </List>
+        </Paper>
+      </Hidden>
+    </>
   );
 }
 

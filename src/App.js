@@ -1,4 +1,4 @@
-import React from "react";
+import React, { useState } from "react";
 import avatarImage from "./avatar.png";
 import {
   makeStyles,
@@ -9,8 +9,14 @@ import {
   Input,
   Toolbar,
   Typography,
+  Hidden,
 } from "@material-ui/core";
-import { MailOutline, NotificationsNone, Search } from "@material-ui/icons";
+import {
+  MailOutline,
+  NotificationsNone,
+  Search,
+  Menu,
+} from "@material-ui/icons";
 import SideBar from "./SideBar";
 import Content from "./Content";
 
@@ -40,22 +46,35 @@ const useStyles = makeStyles((theme) => ({
 
 function App() {
   const { appBar, appBarProfile, searchBar } = useStyles();
+  const [isDrawerOpen, setIsDrawerOpen] = useState(false);
+
   return (
     <>
       <AppBar className={appBar} elevation={3}>
         <Toolbar>
-          <Grid item xs={4}></Grid>
-          <Grid xs={4} item className={searchBar} container>
-            <Grid container alignItems="center">
-              <Search />
-              <Grid item xs={true}>
-                <Input disableUnderline fullWidth placeholder="Search" />
+          <Grid item sm={0} md={4}></Grid>
+          <Hidden smDown>
+            <Grid xs={4} item className={searchBar} container>
+              <Grid container alignItems="center">
+                <Search />
+
+                <Grid item xs={true}>
+                  <Input disableUnderline fullWidth placeholder="Search" />
+                </Grid>
               </Grid>
             </Grid>
-          </Grid>
+          </Hidden>
+
+          <Hidden mdUp>
+            <IconButton onClick={() => setIsDrawerOpen(!isDrawerOpen)}>
+              <Menu />
+            </IconButton>
+          </Hidden>
+
           <Grid
             item
-            xs={4}
+            sm={true}
+            md={4}
             className={appBarProfile}
             container
             alignItems="center"
@@ -76,7 +95,7 @@ function App() {
       </AppBar>
       <Grid container>
         <Grid item>
-          <SideBar />
+          <SideBar open={isDrawerOpen} onClose={() => setIsDrawerOpen(false)} />
         </Grid>
         <Grid xs={true}>
           <Content />
