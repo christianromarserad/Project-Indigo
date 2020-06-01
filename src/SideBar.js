@@ -29,6 +29,9 @@ const useStyles = makeStyles((theme) => ({
     width: "200px",
     zIndex: theme.zIndex.snackbar,
   },
+  drawer: {
+    width: "240px",
+  },
 }));
 
 const listItems = [
@@ -70,10 +73,16 @@ const listItems = [
 ];
 
 function SideBar({ open, onClose }) {
-  const { paper } = useStyles();
+  const { paper, drawer } = useStyles();
   return (
     <>
-      <Drawer variant="temporary" open={open} onClose={onClose}>
+      <Drawer
+        variant="temporary"
+        open={open}
+        onClose={onClose}
+        className={drawer}
+        PaperProps={{ className: drawer }}
+      >
         <List component="nav" aria-labelledby="nested-list-subheader">
           {listItems.map(({ label, icon, to }) => (
             <ListItem
