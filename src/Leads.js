@@ -11,9 +11,6 @@ import {
 import { Payment, LocationOn, Link, ContactMail } from "@material-ui/icons";
 
 const useStyles = makeStyles((theme) => ({
-  leadsContainer: {
-    marginTop: "7rem",
-  },
   subtitle: {
     color: theme.palette.grey[500],
   },
@@ -58,7 +55,7 @@ const leads = [
 ];
 
 function Leads() {
-  const { leadsContainer, subtitle } = useStyles();
+  const { subtitle } = useStyles();
   return (
     <Grid container item xs={12} spacing={2}>
       {leads.map(({ title, value, earn, time, icon }) => (

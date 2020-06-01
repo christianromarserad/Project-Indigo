@@ -1,6 +1,5 @@
 import React from "react";
 import { makeStyles, Grid, Typography, Paper } from "@material-ui/core";
-
 import { ResponsiveLine } from "@nivo/line";
 import earningsData from "./earningsData";
 

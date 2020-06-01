@@ -11,7 +11,7 @@ import {
 } from "@material-ui/core";
 
 const useStyles = makeStyles((theme) => ({
-  mainContent: {
+  mainContainer: {
     padding: "2rem",
   },
   paper: {
@@ -69,7 +69,7 @@ const Task = () => {
   ]);
 
   const {
-    mainContent,
+    mainContainer,
     paper,
     buttonContainer,
     button,
@@ -103,7 +103,7 @@ const Task = () => {
   };
 
   return (
-    <Grid container className={mainContent}>
+    <Grid container className={mainContainer}>
       <DragDropContext onDragEnd={onDragEnd}>
         <Grid container className={buttonContainer} alignItems="center">
           <Grid xs={true}>
